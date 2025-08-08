@@ -1,0 +1,71 @@
+body{
+    background-color: black;
+}
+
+h1.titulo{
+    font-family: "Caveat", cursive;
+    color: rgb(255, 255, 255);
+    font-size: 55px;
+    text-align: center;
+}
+
+.textoCuerpo{
+    font-family: "Rubik", sans-serif;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+h5.cardTitle{
+    font-family: "Josefin Sans", sans-serif;
+    text-align: center;
+    font-size: 30px;
+}
+
+p.cardText{
+    font-family: "Rubik", sans-serif;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.card{
+    background-color: #B0B2B7;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #E23EC8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #F5B668;
+}
+.btn:active {
+    background-color: #E23EC8;
+}
+
+/* ----CONTACTO----- */
+.card{
+    background-color: black;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.form-label{
+    color: white;
+    font-family: "Josefin Sans", sans-serif;
+    margin-top: 20px;
+}
+
+#contactoForm{
+    padding: 80px;
+}
+#logoM{
+    padding-bottom:10px ;
+    
+}
