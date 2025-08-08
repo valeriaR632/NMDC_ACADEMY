@@ -87,5 +87,5 @@ document.getElementById("contactoForm").addEventListener("submit", function (eve
         console.log("Error:", error);
         alertBox.innerText = "Error al enviar el mensaje. Inténtalo de nuevo.";
         alertBox.classList.add("show", "alert-danger");
-    });
+    });
 });
