@@ -1,5 +1,6 @@
 body{
     background-color: black;
+    padding-top: 110px;
 }
 
 h1.titulo{
@@ -9,7 +10,8 @@ h1.titulo{
     text-align: center;
 }
 
-.textoCuerpo{
+.textoCuerpo,
+div.container-fluid{
     font-family: "Rubik", sans-serif;
     font-size: 25px;
     color: rgb(255, 255, 255);
@@ -71,9 +73,43 @@ p.cardText{
 }
 
 /* Barra de navegacion */
+
+nav.navbar {
+  margin: 0px;
+  padding: 0;
+  position: fixed; /* opcional: para que quede fija arriba */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0px;
+  z-index: 1000;
+}
+
+
+
 .container-fluid{
     background-color: #ED1A87;
-    height: 80px;
+    height: 100px;
+    background: radial-gradient(circle, #ED1A87, #d9c64d);
+    text-align: center;
+    border-bottom: 0px;
+    margin-top: 50px;
 
+}
 
+.navbar-title{
+     color: white;
+     /* Se agrega sombreado con brillo al titulo */
+     text-shadow:  
+    0 0 5px #2f00ff,
+    0 0 10px #0099ff,
+    0 0 20px #bf00ff,
+    0 0 40px #ff00de;
+    font-size: 50px;
+}
+nav .nav-link,
+.navbar-brand{
+    color: white;
+    text-align: center;
+    font-size: 25px;
 }
