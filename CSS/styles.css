@@ -69,3 +69,11 @@ p.cardText{
     padding-bottom:10px ;
     
 }
+
+/* Barra de navegacion */
+.container-fluid{
+    background-color: #ED1A87;
+    height: 80px;
+
+
+}
