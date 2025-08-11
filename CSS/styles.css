@@ -1,6 +1,6 @@
 body{
     background-color: black;
-    padding-top: 110px;
+    padding-top: 200px;
 }
 
 h1.titulo{
@@ -75,31 +75,61 @@ p.cardText{
 /* Barra de navegacion */
 
 nav.navbar {
-  margin: 0px;
+  margin: 0;
   padding: 0;
   position: fixed; /* opcional: para que quede fija arriba */
   top: 0;
   left: 0;
   right: 0;
-  height: 0px;
   z-index: 1000;
+  flex-direction: column;
+  align-items: center;
 }
 
 
 
 .container-fluid{
     background-color: #ED1A87;
-    height: 100px;
+    height: 150px;
     background: radial-gradient(circle, #ED1A87, #d9c64d);
     text-align: center;
     border-bottom: 0px;
-    margin-top: 50px;
+    margin-top: 0px;
 
 }
+   span#text-litle{
+     color: white;
+     /* Se agrega sombreado con brillo al titulo */
+     text-shadow:  
+    0 0 5px #2f00ff,
+    0 0 10px #bab44e,
+    0 0 20px #bf00ff,
+    0 0 40px #ff00de;
+    position: absolute;      /* Lo sacamos del flujo normal */
+  top: 5px;                 /* Separación desde arriba */
+  left: 50%;                /* Lo colocamos en el centro horizontal */
+  transform: translateX(-50%); /* Ajuste exacto al centro */
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: clamp(5px, 2vw, 28px);
+  padding: 10px;
 
-<<<<<<< HEAD
+}
+nav .nav-link,
+.navbar-brand{
+    color: white;
+    text-align:center;
+    font-size: 25px;
 }
 
+
+/* Estilo de la pagina Clases */
+.flip-card-back {
+  background-color: transparent;
+  color: black;
+  transform: rotateY(180deg);
+  padding: 1rem;
+}
 .flip-card {
   background-color: transparent;
   width: 18rem;
@@ -140,30 +170,3 @@ nav.navbar {
   padding: 1rem; 
   box-sizing: border-box;
 }
-
-.flip-card-back {
-  background-color: transparent;
-  color: black;
-  transform: rotateY(180deg);
-  padding: 1rem;
-}
-
-
-=======
-.navbar-title{
-     color: white;
-     /* Se agrega sombreado con brillo al titulo */
-     text-shadow:  
-    0 0 5px #2f00ff,
-    0 0 10px #0099ff,
-    0 0 20px #bf00ff,
-    0 0 40px #ff00de;
-    font-size: 50px;
-}
-nav .nav-link,
-.navbar-brand{
-    color: white;
-    text-align: center;
-    font-size: 25px;
-}
->>>>>>> 080fc6c3f75c25afc46f94e899f57e244bc0a1cf
