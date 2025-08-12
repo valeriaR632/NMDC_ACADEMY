@@ -5,3 +5,5 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("navbar-placeholder").innerHTML = data;
     });
 });
+
+
