@@ -1,56 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Footer ancho completo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+    }
+    footer {
+      width: 100vw;
+      background: radial-gradient(circle, #860369, #060606);
+      color: white;
+      padding: 40px 20px;
+      box-sizing: border-box;
+      position: relative;
+      left: 0;
+      bottom: 0;
+       /* suficiente altura */
+      overflow: visible;
+    }
+    footer h5 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+    footer p, footer ul li {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    footer ul {
+      padding-left: 0;
+      list-style: none;
+    }
+    footer a {
+      color: inherit;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    footer i {
+      margin-right: 8px;
+    }
+    
+  </style>
 </head>
 <body>
-      <footer style="flex-wrap: wrap; position: absolute; bottom: 0;">
-    <div class="conteiner">
-      <div class="card-group">
-  <div class="card">
-    <div class="card-body" style="background: radial-gradient(circle, #860369, #060606 ); color: white; font-size: 12px;">
-      <h5 class="card-title" style="font-size: 15px;">Mayor informacion</h5>
-      <p class="card-text"> Queremos ofrecerte la oportunidad de ser parte de Next Stage SUMMER 2025,aprenderás todo lo necesario para la industria, bailarás con artistas en sus videos musicales y obtendrás un BOOK PROFESIONAL 🔥
+
+  <footer>
+    <div class="row" style="max-width: 1200px; margin: auto;">
+      <!-- Columna 1 -->
+      <div class="col-12 col-md-4 mb-4">
+        <h5>Mayor información</h5>
+        <p>
+          Queremos ofrecerte la oportunidad de ser parte de Next Stage SUMMER 2025, aprenderás todo lo necesario para la industria,
+          bailarás con artistas en sus videos musicales y obtendrás un BOOK PROFESIONAL 🔥
         </p>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-body" style="background: radial-gradient(circle, #860369, #060606);color: white; text-align: justify;>
-      <h5 class="card-title">Rede Sociales</h5>
-      
-
-      <ul class="list-group list-group-flush" style="list-style: none; padding: 0; margin: 0;">
-    <li><a href="https://www.facebook.com/share/1CbqYjnehz/?mibextid=wwXIfr" target="_blank" style="color: #1877f2; font-size: 17px;">
-      <i class="fab fa-facebook"></i> Sigueme en facebook </a></li>
-    <li><a href="https://www.instagram.com/nmdance_center?igsh=aTd5aGJpNXIyaHVy" target="_blank" style="color: #e4405f; font-size: 17px;">
-      <i class="fab fa-instagram"></i> Sigueme en Intagram </a></li>
-    <li><a href="https://www.tiktok.com/@nmdance_center?_t=ZS-8yny5jXJegZ&_r=1" target="_blank" style="color: white; font-size: 17px;">
-      <i class="fab fa-tiktok"></i> Sigueme en Tik Tok </a></li>
-      <li><a href="https://youtube.com/@nextmovedancecenter?si=tqGHZeMOJ8xU8154" target="_blank" style="color: red; font-size: 17px;">
-      <i class="fab fa-youtube"></i> Sigueme en YouTube </a></li>
-  </ul>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-body" style="background: radial-gradient(circle, #860369, #060606);color: white; text-align: justify;>
-      
-      <h5 class="card-title">Informacion de contacto</h5>
-
-      <ul class="list-group list-group-flush" style="list-style: none; padding: 0; margin: 0;">
-    <li> <i class="fas fa-map-marker-alt" style="color: red; margin-right: 8px;"></i> Av. Chapultepec #522 Roma Norte, Cuautémoc, 06700, CDMX </li>
-    <li> <i class="fas fa-phone" style="color: green; margin-right: 8px;"></i> (+52) 55 3074 2696 </li>
-    <li> <i class="fas fa-envelope" style="color:blue; margin-right: 8px;"></i> nmdancec@gmail.com </li>
-  </ul>
-    </div>
-  </div>
-</div>
+      </div>
+      <!-- Columna 2 -->
+      <div class="col-12 col-md-4 mb-4">
+        <h5>Redes Sociales</h5>
+        <ul>
+          <li><a href="https://www.facebook.com/share/1CbqYjnehz/?mibextid=wwXIfr" target="_blank">
+            <i class="fab fa-facebook"></i> Sígueme en Facebook</a></li>
+          <li><a href="https://www.instagram.com/nmdance_center?igsh=aTd5aGJpNXIyaHVy" target="_blank">
+            <i class="fab fa-instagram"></i> Sígueme en Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@nmdance_center?_t=ZS-8yny5jXJegZ&_r=1" target="_blank">
+            <i class="fab fa-tiktok"></i> Sígueme en TikTok</a></li>
+          <li><a href="https://youtube.com/@nextmovedancecenter?si=tqGHZeMOJ8xU8154" target="_blank">
+            <i class="fab fa-youtube"></i> Sígueme en YouTube</a></li>
+        </ul>
+      </div>
+      <!-- Columna 3 -->
+      <div class="col-12 col-md-4 mb-4">
+        <h5>Información de contacto</h5>
+        <ul>
+          <li><i class="fas fa-map-marker-alt" style="color: red;"></i> Av. Chapultepec #522 Roma Norte, Cuautémoc, 06700, CDMX</li>
+          <li><i class="fas fa-phone" style="color: green;"></i> (+52) 55 3074 2696</li>
+          <li><i class="fas fa-envelope" style="color: blue;"></i> nmdancec@gmail.com</li>
+        </ul>
+      </div>
     </div>
   </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>    
 </body>
 </html>

@@ -133,13 +133,16 @@ nav .nav-link,
   padding: 1rem;
 }
 .flip-card {
-  background-color: transparent;
+  background-color: black;
   width: 18rem;
   height: 20rem;
   perspective: 1000px;
   margin: auto;
+  color: #fff;
+  
   
 }
+
 
 .flip-card-inner {
   position: relative;
