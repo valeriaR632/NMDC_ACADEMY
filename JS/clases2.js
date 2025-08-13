@@ -1,6 +1,6 @@
  const clases =  {"baile":[
     {
-    "img":"./portadaHIP-HOP.png",
+    "img":"./img.bailes/portadaHIP-HOP.png",
     "clase":"hiphop", 
     "edad":"15 años en adelante",
     "maestro vespertino":"Pablo Lopez",
@@ -11,7 +11,7 @@
 },
 
 {
-    "img":"./portadaHEELS.png",
+    "img":"./img.bailes/portadaHEELS.png",
     "clase":"Heels", 
     "edad":"15 años en adelante",
     "maestro vespertino": "Zhevia Kings ",
@@ -22,7 +22,7 @@
 
 },
 {
-    "img":"./portadaJAZZ.png",
+    "img":"./img.bailes/portadaJAZZ.png",
     "clase":"Jazz", 
     "edad":"15 años en adelante",
     "maestro vespertino": "Kardan Muñoz ",
@@ -32,7 +32,7 @@
 },
 {
 
-    "img":"./portadaVOGUE.png",
+    "img":"./img.bailes/portadaVOGUE.png",
     "clase":"Vogue", 
     "edad":"15 años en adelante",
     "maestro vespertino":"Zhevia King ",
@@ -42,7 +42,7 @@
 
 },
 {
-    "img":"./portadaK-POP.png",
+    "img":"./img.bailes/portadaK-POP.png",
     "clase":"K-pop", 
     "edad": "15 años en adelante",
     "maestro vespertino":"Kardan Muñoz",
@@ -53,7 +53,7 @@
 },
 {
    
-  "img":"./portadaREGGAETON.png",
+  "img":"./img.bailes/portadaREGGAETON.png",
     "clase":"Reggaeton", 
     "edad":"15 años en adelante",
     "maestro vespertino":"Kennybyaa",
@@ -62,7 +62,7 @@
     
 },
 {
-    "img":"./portadaBALLET.png",
+    "img":"./img.bailes/portadaBALLET.png",
     "clase":"Ballet", 
     "edad":"15 años en adelante",
     "maestro vespertino":"Eduardo Sandoval",
@@ -72,7 +72,7 @@
 
 },
 {
-    "img":"./portadaCONTEMPORANEO.png",
+    "img":"./img.bailes/portadaCONTEMPORANEO.png",
     "clase":"Contemporaneo", 
     "edad":"15 años en adelante",
     "maestro vespertino":"Isaac Juarez",
@@ -83,7 +83,7 @@
 },
 {
     
-    "img":"./portadaPERFORMANCE.png",
+    "img":"./img.bailes/portadaPERFORMANCE.png",
     "clase":"Performance", 
     "edad":"15 años en adelante",
     "maestro vespertino":"Josa Márquez",
@@ -93,7 +93,7 @@
 
 },
 {
-    "img":"./portadaHOUSE.png",
+    "img":"./img.bailes/portadaHOUSE.png",
     "clase":"House", 
     "edad":"15 años en adelante",
     "maestro vespertino":"Eduardo Sandoval",
@@ -105,35 +105,42 @@
 ]
  };
 
+const contenedor = document.getElementById("contenedor-clases");
 
+clases.baile.forEach((item) => {
+  const tarjeta = document.createElement("div");
+  tarjeta.classList.add("col-md-4", "mb-4");
 
-const container = document.getElementById('cards-container'); //Se llama al contenedor por ID
-// const agregarBtn = document.getElementById('agregar-btn'); //No se pudo agregar el boton
-function mostrarClases() {
-  container.innerHTML = ''; // Limpiar contenedor antes de agregar
-  clases.baile.forEach(clase => {
-    const card = document.createElement('div');
-    card.classList.add('card');
-    card.style.width = '18rem';
-
-    const horario = Array.isArray(clase.horario) 
-      ? `<ul>${clase.horario.map(h => `<li>${h}</li>`).join('')}</ul>` 
-      : clase.horario; //declaracion de la constante para los arreglos de las clases
-
-    card.innerHTML = `
-      <img src="${clase.img}" class="card-img-top" alt="${clase.clase}">
-      <div class="card-body">
-        <h5 class="card-title">${clase.clase}</h5>
-        <p class="card-text"><strong>Edad:</strong> ${clase.edad}</p>
-        <p class="card-text"><strong>Maestro vespertino:</strong> ${clase["maestro vespertino"]}</p>
-        <p class="card-text"><strong>Maestro fin de semana:</strong> ${clase["maestro fin de semana"] || "N/A"}</p>
-        <p class="card-text"><strong>Horario:</strong> ${horario}</p>
+  tarjeta.innerHTML = `
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="${item.img}" alt="${item.clase}" class="card-img-top">
+        </div>
+        <div class="flip-card-back">
+          <h5>${item.clase}</h5>
+          <p><strong>Edad:</strong> ${item.edad}</p>
+          <p><strong>Maestro Vespertino:</strong> ${item["maestro vespertino"]}</p>
+          <p><strong>Maestro Fin de Semana:</strong> ${item["maestro fin de semana"]}</p>
+          <ul>
+            ${Array.isArray(item.horario) ? item.horario.map(h => `<li>${h}</li>`).join('') : `<li>${item.horario}</li>`}
+          </ul>
+        </div>
       </div>
-    `; //Se copia el codigo de la tarjeta en batcris
+    </div>
 
-    container.appendChild(card);
+    <div class="text-center mt-2">
+      <button type="button" class="btn btn-primary agregar-btn">Agregar</button>
+    </div>
+  `;
+
+  contenedor.appendChild(tarjeta);
+
+  // Seleccionamos el botón de esta tarjeta y le agregamos un evento
+  const boton = tarjeta.querySelector(".agregar-btn");
+  boton.addEventListener("click", () => {
+    alert(`Has agregado la clase: ${item.clase}`);
+    // Aquí puedes agregar otras acciones, por ejemplo:
+    // agregarClaseAlCarrito(item);
   });
-}
-
-// Mostrar las clases inicialmente
-mostrarClases();
+});
