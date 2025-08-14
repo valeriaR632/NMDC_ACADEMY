@@ -1,11 +1,13 @@
- const clases =  {"baile":[
+//JSON
+const clases =  {"baile":[
     {
     "img":"./img.bailes/portadaHIP-HOP.png",
     "clase":"hiphop", 
     "edad":"15 años en adelante",
     "maestro(s)":"vespertino: Pablo Lopez, Fin de semana: Indigo Valenzuela",
-    "horario":["lunes de18:00 a 19:30","sabado y domingo de 11:00,12:15"],
-    
+    "horario":["lunes de18:00 a 19:30 hrs.","sabado y domingo de 11:00,12:15 hrs."],
+    "precio":"$130",
+    "inscripcion anual": "$700",
 
 },
 
@@ -14,8 +16,10 @@
     "clase":"Heels", 
     "edad":"15 años en adelante",
     "maestro(s)": "Zhevia Kings ",
-    "horario":["jueves de 19:30 a 21:00","sabado de 12:15 a 13:30"],
-    
+    "horario":["jueves de 19:30 a 21:00 hrs.","sabado de 12:15 a 13:30 hrs."],
+     "precio":"$130",
+    "inscripcion anual": "$700",
+   
 
 
 },
@@ -24,8 +28,9 @@
     "clase":"Jazz", 
     "edad":"15 años en adelante",
     "maestro(s)": "Kardan Muñoz ",
-    "horario":["jueves de 18:00 a 19:00","sabado de 13:39 a 14:45"],
-    
+    "horario":["jueves de 18:00 a 19:00 hrs.","sabado de 13:39 a 14:45 hrs."],
+     "precio":"$130",
+    "inscripcion anual": "$700",
 },
 {
 
@@ -33,7 +38,9 @@
     "clase":"Vogue", 
     "edad":"15 años en adelante",
     "maestro(s)":"Zhevia King ",
-    "horario":[ "martes de 18:00 a 19:30", "sabado de 14:45 a 16:00"],
+    "horario":[ "martes de 18:00 a 19:30 hrs.", "sabado de 14:45 a 16:00 hrs."],
+     "precio":"$130",
+    "inscripcion anual": "$700",
     
 
 },
@@ -42,8 +49,10 @@
     "clase":"K-pop", 
     "edad": "15 años en adelante",
     "maestro(s))":"Kardan Muñoz",
-    "horario":[ "jueves de 16:30 a 18:00",  "domingo de12:15 a 13:30"],
-  
+    "horario":[ "jueves de 16:30 a 18:00 hrs.",  "domingo de 12:15 a 13:30 hrs."],
+   "precio":"$130",
+    "inscripcion anual": "$700",
+    
 
 },
 {
@@ -52,16 +61,18 @@
     "clase":"Reggaeton", 
     "edad":"15 años en adelante",
     "maestro(s)":"Kennybyaa",
-    "horario":"viernes de  19:30 a 21:00",
-    
+    "horario":"viernes de  19:30 a 21:00 hrs.",
+     "precio":"$130",
+    "inscripcion anual": "$700",
 },
 {
     "img":"./img.bailes/portadaBALLET.png",
     "clase":"Ballet", 
     "edad":"15 años en adelante",
     "maestro(s)":"Eduardo Sandoval",
-    "horario":["lunes de  19:30 a 21:00","miercoles de 19:30 a 21:00 "],
-    
+    "horario":["lunes de  19:30 a 21:00 hrs.","miercoles de 19:30 a 21:00 hrs."],
+     "precio":"$130",
+    "inscripcion anual": "$700",
 
 },
 {
@@ -69,8 +80,9 @@
     "clase":"Contemporaneo", 
     "edad":"15 años en adelante",
     "maestro(s)":"Isaac Juarez",
-    "horario":["martes de  19:30 a 21:00",],
-    
+    "horario":["martes de  19:30 a 21:00 hrs.",],
+     "precio":"$130",
+    "inscripcion anual": "$700",
 
 },
 {
@@ -79,8 +91,9 @@
     "clase":"Performance", 
     "edad":"15 años en adelante",
     "maestro(s)":"Josa Márquez",
-    "horario":["miercoles de 18:00 a 19:30 "],
-    
+    "horario":["miercoles de 18:00 a 19:30 hrs."],
+     "precio":"$130",
+    "inscripcion anual": "$700",
 
 },
 {
@@ -88,8 +101,9 @@
     "clase":"House", 
     "edad":"15 años en adelante",
     "maestro(s)":"Eduardo Sandoval",
-    "horario":["viernes de  18:00 a 19:30"],
-    
+    "horario":["viernes de  18:00 a 19:30 hrs."],
+     "precio":"$130",
+    "inscripcion anual": "$700",
 
 }
 ]
@@ -111,9 +125,9 @@ clases.baile.forEach((item) => {
           <h5>${item.clase}</h5>
           <p><strong>Edad:</strong> ${item.edad}</p>
           <p><strong>Maestro(s):</strong> ${item["maestro(s)"]}</p>
-          <ul>
-            ${Array.isArray(item.horario) ? item.horario.map(h => `<li>${h}</li>`).join('') : `<li>${item.horario}</li>`}
-          </ul>
+          <p><strong>Horario:</strong> ${item["horario"]}</p>
+         <p><strong>Precio:</strong> ${item["precio"]}</p>
+         <p><strong>Inscripcion anual:</strong> ${item["inscripcion anual"]}</p>
         </div>
       </div>
     </div>

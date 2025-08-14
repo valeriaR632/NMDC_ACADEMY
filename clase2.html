@@ -9,6 +9,13 @@
 </head>
 <body>
   <div id="navbar-placeholder"></div>
+  <script>document.addEventListener("DOMContentLoaded", () => {
+  fetch("Nav.html")
+    .then(response => response.text())
+    .then(data => {
+    document.getElementById("navbar-placeholder").innerHTML = data;
+    });
+});</script>
    <h1 id="page-clas">Conoce nuestras clases</h1>
     <div id="contenedor-clases" class="d-flex flex-wrap gap-3"></div>
 
@@ -26,6 +33,16 @@
 
 <script src="../NMDC_ACADEMY/JS/nav.js defer"></script>
 <script src="./JS/clases2.js"></script>
-<script src="../NMDC_ACADEMY/JS/footer.js"></script>
+
+
+       <div id="footer-placeholder"></div>
+       
+       <script>
+              fetch('./footer.html')
+                     .then(response => response.text())
+                     .then(data => {
+                            document.getElementById('footer-placeholder').innerHTML = data;
+                     });
+       </script>
 </body>
 </html>
