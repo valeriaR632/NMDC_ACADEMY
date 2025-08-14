@@ -76,6 +76,11 @@ p.cardText{
 
 /* Barra de navegacion */
 
+/* Subir un poco el dropdown de "¡Tu Cuenta!" */
+.nav-item.dropdown .dropdown-menu {
+  margin-top: -19px; /* o prueba con -10px si quieres más arriba */
+}
+
 nav.navbar {
   margin: 0;
   padding: 0;
