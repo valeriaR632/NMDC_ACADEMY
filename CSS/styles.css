@@ -1,7 +1,7 @@
 body{
     background-color: black;
     padding-top: 200px;
-    margin-bottom: 500px;
+    margin-bottom: 0;
 }
 
 h1.titulo{
@@ -9,6 +9,7 @@ h1.titulo{
     color: rgb(255, 255, 255);
     font-size: 55px;
     text-align: center;
+    margin-bottom: 70px;
 }
 
 .textoCuerpo,
@@ -75,6 +76,11 @@ p.cardText{
 
 /* Barra de navegacion */
 
+/* Subir un poco el dropdown de "¡Tu Cuenta!" */
+.nav-item.dropdown .dropdown-menu {
+  margin-top: -19px; /* o prueba con -10px si quieres más arriba */
+}
+
 nav.navbar {
   margin: 0;
   padding: 0;
@@ -85,9 +91,8 @@ nav.navbar {
   z-index: 1000;
   flex-direction: column;
   align-items: center;
-}
-
   
+}
 
 .container-fluid{
     background-color: #ED1A87;
@@ -179,7 +184,7 @@ nav .nav-link,
   padding: 1rem; 
   box-sizing: border-box;
 }
-===================================================
+
 /* Contenedor de la tarjeta */
  .flip-card {
   background-color: transparent;
@@ -248,3 +253,194 @@ h1#page-clas{
     font-size: 55px;
     text-align: center;
 }
+
+/* Footer */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ /* .container{
+    max-width: 1170px;
+    background-color: #060606;
+    padding: 80px 10px;
+    margin: auto;
+    min-height:  300px;
+}  */
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+ul{
+    list-style: none ;
+}
+.footer{
+    background: radial-gradient(circle, #860369, #060606);
+    padding: 70px 0;
+    
+}
+
+
+.footer-col{
+    width: 33.33%;
+    padding: 0 15px;
+    position: relative;
+}
+
+.footer-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+}
+
+.footer-col:not(:last-child)::after {
+    border-right: 1px solid #fff;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background-color: white;
+}
+
+/**/
+
+
+/* Contenedor del footer */
+.footer {
+  background-color: black;
+  color: white;
+  padding-top: 1rem; /* py-4 en bootstrap = 1.5rem, ajusta si quieres */
+  padding-bottom: 1rem;
+  margin-top: 1rem; /* mt-4 */
+}
+
+/* Flex para las columnas del footer */
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+/* Cada columna */
+.footer-col {
+  flex: 1 1 300px; 
+}
+
+/* Mayor información - texto */
+.info-col p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Títulos de las columnas */
+.footer-col h4 {
+  font-size: 20px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+/* Redes sociales */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-link {
+  font-size: 17px;
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.3s;
+}
+
+/* Colores específicos para cada red social */
+.social-link.facebook { color: #1877f2; }
+.social-link.instagram { color: #e4405f; }
+.social-link.tiktok { color: white; }
+.social-link.youtube { color: red; }
+
+/* Hover */
+.social-link:hover {
+  opacity: 0.8;
+}
+
+/* Lista de contacto */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Iconos con colores */
+.icon-map { color: red; }
+.icon-phone { color: green; }
+.icon-email { color: blue; }
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 600px) {
+  .footer-row {
+    flex-direction: column;
+  }
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: justify;
+}
+
+.contact-list li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: white;
+  line-height: 1.5;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centra horizontalmente los enlaces */
+  gap: 8px;
+  text-align: center;
+}
+
+.social-links a {
+  text-decoration: none;
+  font-size: 17px;
+  color: white;
+}
+
+/* Colores específicos para cada red */
+.social-link.facebook { color: #1877f2; }
+.social-link.instagram { color: #e4405f; }
+.social-link.tiktok { color: white; }
+.social-link.youtube { color: red; }
+
+.footer-col h4 {
+    text-align: center; 
+
+}
+
+.footer-col p{
+  text-align: justify;
+}
+
+

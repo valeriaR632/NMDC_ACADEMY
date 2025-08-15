@@ -5,12 +5,12 @@
 
 // Funciones de validación con ciertas características
 function validarNombre(nombre) {
-    const regex = /^[a-zA-Z0-9_\s]+$/;
+    const regex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{3,}$/;
     return regex.test(nombre);
 }
 
 function validarApellido(apellido) {
-    const regex = /^[a-zA-Z0-9_\s]+$/;
+    const regex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{3,}$/;
     return regex.test(apellido);
 }
 
@@ -20,8 +20,10 @@ function validarEmail(email) {
 }
 
 function validarTelefono(telefono) {
-    const regex = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/;
-    return regex.test(telefono);
+   const regex = /^(?!0{10})\d{10}$/;
+
+      return regex.test(telefono);
+ 
 }
 
 function validarMensaje(mensaje) {
@@ -43,6 +45,7 @@ document.getElementById("contactoForm").addEventListener("submit", function (eve
     alertBox.innerText = "";
     alertBox.classList.remove("show", "alert-danger", "alert-success");
 
+    //Array errores
     let errores = [];
 
     // Validar campos 
@@ -56,8 +59,11 @@ document.getElementById("contactoForm").addEventListener("submit", function (eve
         errores.push("El email no es válido.");
     }
     if (!validarTelefono(telefono)) {
-        errores.push("El teléfono no es válido.");
+         errores.push("El teléfono no es válido.");
     }
+
+
+
     if (!validarMensaje(mensaje)) {
         errores.push("El mensaje no puede estar vacío.");
     }
@@ -68,6 +74,8 @@ document.getElementById("contactoForm").addEventListener("submit", function (eve
         alertBox.classList.add("show", "alert-danger");
         return; 
     }
+
+    
 
     // Envio a emailjs
     emailjs.send("service_c04p4z4", "template_hjtdd87", {
@@ -88,4 +96,6 @@ document.getElementById("contactoForm").addEventListener("submit", function (eve
         alertBox.innerText = "Error al enviar el mensaje. Inténtalo de nuevo.";
         alertBox.classList.add("show", "alert-danger");
     });
-});
+}
+);
+

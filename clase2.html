@@ -8,7 +8,14 @@
     <link rel="stylesheet" href="CSS/styles.css"> 
 </head>
 <body>
-
+  <div id="navbar-placeholder"></div>
+  <script>document.addEventListener("DOMContentLoaded", () => {
+  fetch("Nav.html")
+    .then(response => response.text())
+    .then(data => {
+    document.getElementById("navbar-placeholder").innerHTML = data;
+    });
+});</script>
    <h1 id="page-clas">Conoce nuestras clases</h1>
     <div id="contenedor-clases" class="d-flex flex-wrap gap-3"></div>
 
@@ -16,18 +23,26 @@
 <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
   <button id="agregar-btn" class="btn btn-primary">Agregar</button>
 </div>  -->
+  <div id="footer-container"></div>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
     crossorigin="anonymous"></script>
 
-    
-</script>
-<script src="./JS/nav.js"></script> 
+
+<script src="../NMDC_ACADEMY/JS/nav.js defer"></script>
+<script src="./JS/clases2.js"></script>
 
 
-    
-    <script src="./JS/clases2.js"></script>
+       <div id="footer-placeholder"></div>
+       
+       <script>
+              fetch('./footer.html')
+                     .then(response => response.text())
+                     .then(data => {
+                            document.getElementById('footer-placeholder').innerHTML = data;
+                     });
+       </script>
 </body>
 </html>
