@@ -142,8 +142,10 @@ clases.baile.forEach((item) => {
   // Seleccionamos el botón de esta tarjeta y le agregamos un evento
   const boton = tarjeta.querySelector(".agregar-btn");
   boton.addEventListener("click", () => {
-    alert(`Has agregado la clase: ${item.clase}`);
+    window.location.href = `formulario.html?clase=${encodeURIComponent(item.clase)}`;
+});
+   // alert(`Has agregado la clase: ${item.clase}`);
     // Aquí puedes agregar otras acciones, por ejemplo:
     // agregarClaseAlCarrito(item);
   });
-});
+
