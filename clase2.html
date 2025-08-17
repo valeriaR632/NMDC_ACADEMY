@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clases</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="CSS/styles.css"> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clases</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="CSS/styles.css">
 </head>
+
 <body>
   <div id="navbar-placeholder"></div>
   <script>document.addEventListener("DOMContentLoaded", () => {
-  fetch("Nav.html")
-    .then(response => response.text())
-    .then(data => {
-    document.getElementById("navbar-placeholder").innerHTML = data;
-    });
-});</script>
-   <h1 id="page-clas">Conoce nuestras clases</h1>
-    <div id="contenedor-clases" class="d-flex flex-wrap gap-3"></div>
+      fetch("Nav.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("navbar-placeholder").innerHTML = data;
+        });
+    });</script>
+  <h1 id="page-clas">Conoce nuestras clases</h1>
 
-<!-- <Botón fijo siempre visible 
+  <div class="container">
+  <div id="contenedor-clases" class="row justify-content-center"></div>
+</div>
+
+
+
+
+  <!-- <Botón fijo siempre visible 
 <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
   <button id="agregar-btn" class="btn btn-primary">Agregar</button>
 </div>  -->
@@ -31,18 +40,19 @@
     crossorigin="anonymous"></script>
 
 
-<script src="../NMDC_ACADEMY/JS/nav.js defer"></script>
-<script src="./JS/clases2.js"></script>
+  <script src="../NMDC_ACADEMY/JS/nav.js defer"></script>
+  <script src="./JS/clases2.js"></script>
 
 
-       <div id="footer-placeholder"></div>
-       
-       <script>
-              fetch('./footer.html')
-                     .then(response => response.text())
-                     .then(data => {
-                            document.getElementById('footer-placeholder').innerHTML = data;
-                     });
-       </script>
+  <div id="footer-placeholder"></div>
+
+  <script>
+    fetch('./footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
 </body>
+
 </html>

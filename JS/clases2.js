@@ -112,9 +112,11 @@ const clases =  {"baile":[
 const contenedor = document.getElementById("contenedor-clases");
 
 clases.baile.forEach((item) => {
+  //  Creamos la columna responsiva
   const tarjeta = document.createElement("div");
-  tarjeta.classList.add("col-md-4", "mb-4");
+  tarjeta.className = "col-12 col-sm-6 col-md-4 mb-4"; // ← clases Bootstrap
 
+  // Agregamos el contenido HTML de la tarjeta
   tarjeta.innerHTML = `
     <div class="flip-card">
       <div class="flip-card-inner">
@@ -124,28 +126,33 @@ clases.baile.forEach((item) => {
         <div class="flip-card-back">
           <h5>${item.clase}</h5>
           <p><strong>Edad:</strong> ${item.edad}</p>
-          <p><strong>Maestro(s):</strong> ${item["maestro"]}</p>
-          <p><strong>Horario:</strong> ${item["horario"]}</p>
-         <p><strong>Precio:</strong> ${item["precio"]}</p>
-         <p><strong>Inscripcion anual:</strong> ${item["inscripcion anual"]}</p>
+          <p><strong>Maestro(s):</strong> ${item.maestro}</p>
+          <p><strong>Horario:</strong><br> ${item.horario.join("<br>")}</p>
+          <p><strong>Precio:</strong> ${item.precio}</p>
+          <p><strong>Inscripción anual:</strong> ${item["inscripcion anual"]}</p>
         </div>
       </div>
-    </div>
-
-    <div class="text-center mt-2">
-      <button type="button" class="btn btn-primary agregar-btn">Agregar</button>
-    </div>
+      </div>
+      <div style="text-align:center; margin-top: 10px;">
+        <button type="button" class="btn btn-primary agregar-btn">Agregar</button>
+      </div>
+    
   `;
 
+  // Lo agregamos al contenedor
   contenedor.appendChild(tarjeta);
 
-  // Seleccionamos el botón de esta tarjeta y le agregamos un evento
+  // Funcionalidad del botón "Agregar"
   const boton = tarjeta.querySelector(".agregar-btn");
   boton.addEventListener("click", () => {
     window.location.href = `formulario.html?clase=${encodeURIComponent(item.clase)}`;
-});
-   // alert(`Has agregado la clase: ${item.clase}`);
-    // Aquí puedes agregar otras acciones, por ejemplo:
-    // agregarClaseAlCarrito(item);
   });
+});
 
+
+    
+  
+
+ 
+
+  
