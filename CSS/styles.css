@@ -290,7 +290,8 @@ h1#page-clas{
 ul{
     list-style: none ;
 }
-.footer{
+.footer,
+div#contenedor{
     background: radial-gradient(circle, #860369, #060606);
     padding: 70px 0;
     
@@ -455,5 +456,6 @@ ul{
 .footer-col p{
   text-align: justify;
 }
+
 
 

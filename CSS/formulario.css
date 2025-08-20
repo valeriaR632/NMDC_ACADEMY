@@ -1,0 +1,28 @@
+#tablaListaClases th,
+#tablaListaClases td {
+    text-align: center;     /* centra el texto */
+    vertical-align: middle; /* centra verticalmente */
+    color: #ffffff;         /* letras blancas */
+}
+
+/* Encabezados en blanco */
+#tablaListaClases thead th {
+    color: #ffffff;
+    background-color: #333333; /* opcional: fondo gris oscuro para diferenciar */
+}
+
+/* Opcional: bordes blancos */
+#tablaListaClases {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+h2{color:#ffffff
+}
+
+h4{
+    color: #ffffff;
+}
+label {
+    color: #ffffff; 
+}
+
