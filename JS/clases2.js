@@ -145,7 +145,7 @@ clases.baile.forEach((item) => {
   // Funcionalidad del botón "Agregar"
   const boton = tarjeta.querySelector(".agregar-btn");
   boton.addEventListener("click", () => {
-    window.location.href = `formulario.html?clase=${encodeURIComponent(item.clase)}`;
+    window.location.href = `formulario.html?Name=${encodeURIComponent(item.clase)}`;
   });
 });
 
