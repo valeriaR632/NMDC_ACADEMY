@@ -22,6 +22,7 @@ body {
     background-color: rgba(255, 255, 255, 0.7); 
     border-radius: 10px;
     overflow: hidden;
+    margin-top: 200px;
 }
 
 .flip-card-inner {
@@ -114,4 +115,61 @@ form input {
 #alertBox {
   /* margin-top: 60px; */
   margin-bottom: 2px;
+}
+
+/************************* STYLES BARRA DE NAVEGACIÓN******/
+
+* Barra de navegacion */
+
+/* Subir un poco el dropdown de "¡Tu Cuenta!" */
+.nav-item.dropdown .dropdown-menu {
+  margin-top: -19px; /* o prueba con -10px si quieres más arriba */
+}
+
+nav.navbar {
+  margin: 0;
+  padding: 0;
+  position: fixed; /* opcional: para que quede fija arriba */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.container-fluid{
+    background-color: #ED1A87;
+    height: 150px;
+    background: radial-gradient(circle, #ED1A87, #e8e383);
+    text-align: center;
+    border-bottom: 0px;
+    margin-top: 0px;
+
+}
+   span#text-litle{
+     color: white;
+     /* Se agrega sombreado con brillo al titulo */
+     text-shadow:  
+    0 0 20px #2f00ff,
+    0 0 10px #c8d210,
+    0 0 20px #bf00ff,
+    0 0 40px #ff00de;
+    position: absolute;      /* Lo sacamos del flujo normal */
+  top: 5px;                 /* Separación desde arriba */
+  left: 50%;                /* Lo colocamos en el centro horizontal */
+  transform: translateX(-50%); /* Ajuste exacto al centro */
+  font-weight: bold;
+  margin-bottom: 25px;
+  font-size: clamp(5px, 2vw, 28px);
+  padding: 10px;
+
+}
+nav .nav-link,
+.navbar-brand{
+    color: white;
+    text-align:center;
+    font-size: 25px;
+    padding: 20px;
 }
