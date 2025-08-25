@@ -457,5 +457,17 @@ div#contenedor{
   text-align: justify;
 }
 
+.carousel-item img {
+  max-height: auto;
+  width: auto;
+  margin:  auto; 
+}
+.card img {
+  max-height: 300px;
+  width: auto;
+  margin: 0 auto;  
+  display: block;
+}
+
 
 
