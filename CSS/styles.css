@@ -458,10 +458,12 @@ div#contenedor{
 }
 
 .carousel-item img {
-  max-height: auto;
-  width: auto;
-  margin:  auto; 
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;    /* o center / bottom */
 }
+
 .card img {
   max-height: 300px;
   width: auto;
