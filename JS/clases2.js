@@ -1,5 +1,5 @@
 //JSON
-const clases =  {"baile":[
+   const clases =  {"baile":[
     {
     "img":"./img.bailes/portadaHIP-HOP.png",
     "clase":"hiphop", 
@@ -111,43 +111,79 @@ const clases =  {"baile":[
 
 const contenedor = document.getElementById("contenedor-clases");
 
-clases.baile.forEach((item) => {
-  //  Creamos la columna responsiva
-  const tarjeta = document.createElement("div");
-  tarjeta.className = "col-12 col-sm-6 col-md-4 mb-4"; // ← clases Bootstrap
+// Clases iniciales (las 10 que ya tienes en tu archivo original)
+const clasesIniciales = clases.baile;
 
-  // Agregamos el contenido HTML de la tarjeta
-  tarjeta.innerHTML = `
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="${item.img}" alt="${item.clase}" class="card-img-top">
+// Clases guardadas en localStorage
+function obtenerClasesGuardadas() {
+  return JSON.parse(localStorage.getItem("clases")) || [];
+}
+
+// Unimos ambas listas
+function obtenerTodasLasClases() {
+  return [...clasesIniciales, ...obtenerClasesGuardadas()];
+}
+
+// Función para renderizar tarjetas
+function mostrarClases(lista) {
+  contenedor.innerHTML = ""; // Limpiamos antes de agregar
+
+  lista.forEach((item, index) => {
+    const tarjeta = document.createElement("div");
+    tarjeta.className = "col-12 col-sm-6 col-md-4 mb-4";
+
+    tarjeta.innerHTML = `
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="${item.img}" alt="${item.clase}" class="card-img-top">
+          </div>
+          <div class="flip-card-back">
+            <h5>${item.clase}</h5>
+            <p><strong>Edad:</strong> ${item.edad}</p>
+            <p><strong>Maestro(s):</strong> ${item.maestro}</p>
+            <p><strong>Horario:</strong><br> ${item.horario.join("<br>")}</p>
+            <p><strong>Precio:</strong> ${item.precio}</p>
+            <p><strong>Inscripción anual:</strong> ${item["inscripcion anual"]}</p>
+          </div>
         </div>
-        <div class="flip-card-back">
-          <h5>${item.clase}</h5>
-          <p><strong>Edad:</strong> ${item.edad}</p>
-          <p><strong>Maestro(s):</strong> ${item.maestro}</p>
-          <p><strong>Horario:</strong><br> ${item.horario.join("<br>")}</p>
-          <p><strong>Precio:</strong> ${item.precio}</p>
-          <p><strong>Inscripción anual:</strong> ${item["inscripcion anual"]}</p>
-        </div>
-      </div>
       </div>
       <div style="text-align:center; margin-top: 10px;">
         <button type="button" class="btn btn-primary agregar-btn">Agregar</button>
+        ${index >= clasesIniciales.length ? 
+          `<button type="button" class="btn btn-danger eliminar-btn">Eliminar</button>` 
+          : ""}
       </div>
-    
-  `;
+    `;
 
-  // Lo agregamos al contenedor
-  contenedor.appendChild(tarjeta);
+    contenedor.appendChild(tarjeta);
 
-  // Funcionalidad del botón "Agregar"
-  const boton = tarjeta.querySelector(".agregar-btn");
-  boton.addEventListener("click", () => {
-    window.location.href = `formulario.html?Name=${encodeURIComponent(item.clase)}`;
+    // Botón "Agregar"
+    const botonAgregar = tarjeta.querySelector(".agregar-btn");
+    botonAgregar.addEventListener("click", () => {
+      window.location.href = `formulario.html?Name=${encodeURIComponent(item.clase)}`;
+    });
+
+    // Botón "Eliminar" (solo para las nuevas en localStorage)
+    if (index >= clasesIniciales.length) {
+      const botonEliminar = tarjeta.querySelector(".eliminar-btn");
+      botonEliminar.addEventListener("click", () => {
+        eliminarClase(index - clasesIniciales.length);
+      });
+    }
   });
-});
+}
+
+// Eliminar una clase del localStorage
+function eliminarClase(index) {
+  const clasesGuardadas = obtenerClasesGuardadas();
+  clasesGuardadas.splice(index, 1); // Quitamos la clase en esa posición
+  localStorage.setItem("clases", JSON.stringify(clasesGuardadas));
+  mostrarClases(obtenerTodasLasClases()); // Recargamos lista
+}
+
+// Mostrar todas las clases al cargar
+mostrarClases(obtenerTodasLasClases());
 
 
     

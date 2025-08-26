@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Clases de Baile</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="./JS/storage.js"></script>
+</head>
+<body>
+  <h1>Catálogo de Clases</h1>
+  <div id="contenedor-clases" class="row"></div>
+
+  <script>
+    const contenedor = document.getElementById("contenedor-clases");
+    const clases = obtenerClases();
+
+    clases.forEach((item) => {
+      const tarjeta = document.createElement("div");
+      tarjeta.className = "col-12 col-sm-6 col-md-4 mb-4";
+
+      tarjeta.innerHTML = `
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="${item.img}" alt="${item.clase}" class="card-img-top">
+            </div>
+            <div class="flip-card-back">
+              <h5>${item.clase}</h5>
+              <p><strong>Edad:</strong> ${item.edad}</p>
+              <p><strong>Maestro:</strong> ${item.maestro}</p>
+              <p><strong>Horario:</strong><br>${item.horario.join("<br>")}</p>
+              <p><strong>Precio:</strong> ${item.precio}</p>
+              <p><strong>Inscripción:</strong> ${item.inscripcion}</p>
+            </div>
+          </div>
+        </div>
+      `;
+
+      contenedor.appendChild(tarjeta);
+    });
+  </script>
+</body>
+</html>

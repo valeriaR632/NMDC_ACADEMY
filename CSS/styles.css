@@ -109,7 +109,7 @@ nav.navbar {
      /* Se agrega sombreado con brillo al titulo */
      text-shadow:  
     0 0 20px #2f00ff,
-    0 0 10px #c8d210,
+    0 0 10px #d21084, /* boton de registro */
     0 0 20px #bf00ff,
     0 0 40px #ff00de;
     position: absolute;      /* Lo sacamos del flujo normal */

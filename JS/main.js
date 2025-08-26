@@ -8,6 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const alertBox = document.getElementById('alertBox');
   const alertLogin = document.getElementById('alertLogin');
 
+  const params = new URLSearchParams(window.location.search);
+  const modo = params.get("modo");
+
+  if (modo === "login") {
+    flipCardInner.style.transform = "rotateY(180deg)";
+  } else if (modo === "registro") {
+    flipCardInner.style.transform = "rotateY(0deg)";
+  }
+
   // Girar a formulario de login
   loginText.addEventListener('click', () => {
     flipCardInner.style.transform = 'rotateY(180deg)';
@@ -106,6 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
     clearAlerts();
 
     const usuarioGuardado = JSON.parse(localStorage.getItem('usuarioRegistrado'));
+   // const usuarioGuardado =  { correo: txtcorreo, contraseña: txtpassword };
+    //localStorage.setItem('usuarioLogueado', JSON.stringify(usuarioGuardado));
 
     if (!usuarioGuardado) {
       alertLogin.innerText = "No hay usuarios registrados.";
@@ -120,10 +131,22 @@ document.addEventListener('DOMContentLoaded', () => {
       alertLogin.innerText = `Bienvenido, ${usuarioGuardado.nombre} ${usuarioGuardado.apellido}!`;
       alertLogin.className = "alert alert-success show";
 
+      const datosSesion= {
+        correo: correoIngresado, 
+        contraseña: contraseñaIngresada
+      };
+
+      localStorage.setItem('usuarioLogueado', JSON.stringify(datosSesion)); 
       // Aquí redirigir o lo que quieras después de login
+
+      setTimeout(() => {
+      window.location.href = "index.html";
+    }, 1000); // espera 1 segundo para mostrar el mensaje antes de redirigir
+
     } else {
-      alertLogin.innerText = "Correo o contraseña incorrectos.";
-      alertLogin.className = "alert alert-danger show";
+    alertLogin.innerText = "Correo o contraseña incorrectos.";
+    alertLogin.className = "alert alert-danger show";
     }
+
   });
 });
