@@ -8,7 +8,8 @@ body {
     background-image: url('../imgClases/registro.jpg'); 
     background-position: center;
     background-size: cover;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Josefin Sans", sans-serif;
+
 }
 
 .container {
@@ -75,8 +76,8 @@ input {
 .btn-primary {
     padding: 10px;
     font-size: 1rem;
-    background-color: #ff9ef5;
-    color: blanchedalmond;
+    background-color: #ee2095;
+    color: rgb(255, 255, 255);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -84,18 +85,23 @@ input {
 }
 
 .btn-primary:hover {
-    background-color: yellow;
+    background-color: rgb(8, 12, 137);
 }
 
 .toggle-text {
     margin-top: 10px;
-    color: rgb(99, 12, 12);
+    color: rgb(8, 12, 137);
     cursor: pointer;
     display: block;
 }
 
 h1 {
-    color: blue;
+    color: rgb(8, 12, 137);
+     
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
 }
 
 @media (max-width: 800px) {
