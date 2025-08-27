@@ -35,6 +35,10 @@ p.cardText{
 
 .card{
     background-color: #B0B2B7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /*Para que todas las cards tengan la misma altura*/
 }
 
 .btn {
@@ -392,6 +396,7 @@ div#contenedor{
   list-style: none;
   padding: 0;
   margin: 0;
+  
 }
 
 .contact-list li {
