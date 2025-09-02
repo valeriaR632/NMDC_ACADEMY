@@ -58,5 +58,5 @@ form.addEventListener("submit", (e) => {
   alert("Clase creada con éxito ✅");
 
   // Redirigir a clases2.html
-  window.location.href = "../clase2.html";
+  window.location.href = "./clase2.html";
 });
