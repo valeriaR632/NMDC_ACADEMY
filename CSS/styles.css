@@ -478,3 +478,10 @@ div#contenedor{
 
 
 
+/* Cambios para el contacto */
+#alertResultado {
+  display: none; 
+}
+#mensaje {
+  resize: none; 
+}
