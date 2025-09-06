@@ -20,7 +20,7 @@ function validarEmail(email) {
 }
 
 function validarTelefono(telefono) {
-    const regex = /^(?!0+$)\d{10}$/;
+    const regex = /^[1-9]\d{9}$/;
     return regex.test(telefono);
 }
 
