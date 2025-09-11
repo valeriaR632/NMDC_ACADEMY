@@ -6,23 +6,23 @@ body{
 }
 
 h1.titulo{
-    font-family: "Caveat", cursive;
+    font-family: "Josefin Sans", sans-serif;
     color: rgb(255, 255, 255);
-    font-size: 55px;
+    font-size: 45px;
     text-align: center;
     margin-bottom: 70px;
 }
-
+/* descripción en Nosotros y barra de navegacion */
 .textoCuerpo,
 div.container-fluid{
-    font-family: "Rubik", sans-serif;
+    font-family:"Rubik", sans-serif;
     font-size: 25px;
     color: rgb(255, 255, 255);
     text-align: center;
 }
 
 h5.cardTitle{
-    font-family: "Josefin Sans", sans-serif;
+    font-family: "Rubik", sans-serif;
     text-align: center;
     font-size: 30px;
 }
@@ -42,8 +42,9 @@ p.cardText{
 }
 
 .btn {
+    font-family: "Rubik", sans-serif;
     padding: 10px 20px;
-    background-color: #E23EC8;
+    background-color: #f02289;
     color: white;
     border: none;
     border-radius: 5px;
@@ -58,6 +59,7 @@ p.cardText{
 
 /* ----CONTACTO----- */
 .card{
+    font-family: "Rubik", sans-serif;
     background-color: black;
     color: white;
     padding-top: 10px;
@@ -125,6 +127,10 @@ nav.navbar {
   font-size: clamp(5px, 2vw, 28px);
   padding: 10px;
 
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+
+
 }
 nav .nav-link,
 .navbar-brand{
@@ -132,6 +138,7 @@ nav .nav-link,
     text-align:center;
     font-size: 25px;
     padding: 20px;
+               
 }
 
 
@@ -139,8 +146,8 @@ nav .nav-link,
 
 
 .flip-card-back {
-  background-color: #343a40; /* gris oscuro */
-  color: white;
+  background-color: #000000; /* gris oscuro */
+  color: rgb(255, 145, 198);
   transform: rotateY(180deg);
   /* padding: 1rem; */
   padding: 15px;
@@ -148,6 +155,7 @@ nav .nav-link,
   flex-direction: column;
   /* justify-content: center; */
    justify-content: space-between; 
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
    
 }
 
@@ -266,10 +274,11 @@ nav .nav-link,
   background-color: #F5B668;
 }
 h1#page-clas{
- font-family: "Caveat", cursive;
+ font-family: "Rubik", cursive;
     color: rgb(255, 255, 255);
-    font-size: 55px;
+    font-size: 40px;
     text-align: center;
+
 }
 
 /* Footer */

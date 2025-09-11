@@ -21,6 +21,8 @@ nav.navbar {
     text-align: center;
     border-bottom: 0px;
     margin-top: 50px;
+    
+
 
 }
    span#text-litle{
@@ -40,6 +42,7 @@ nav.navbar {
   margin-bottom: 10px;
   font-size: (16px, 2vw, 28px);
 
+ 
 }
 nav .nav-link,
 .navbar-brand{
