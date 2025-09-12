@@ -1,5 +1,5 @@
 //JSON
-   const clases =  {"baile":[
+   /*const clases =  {"baile":[
     {
     "img":"./img.bailes/HIPHOP.webp",
     "clase":"Hip-Hop", 
@@ -117,19 +117,51 @@
 ]
  };
 
+
+  };*/
+
 const contenedor = document.getElementById("contenedor-clases");
 
-// Clases iniciales (las 10 que ya tienes en tu archivo original)
-const clasesIniciales = clases.baile;
+// Clases iniciales (puedes dejar tu archivo original o un array aquí)
+const clasesIniciales = []; // si ya no quieres usar locales, déjalo vacío
 
 // Clases guardadas en localStorage
 function obtenerClasesGuardadas() {
   return JSON.parse(localStorage.getItem("clases")) || [];
 }
 
-// Unimos ambas listas
-function obtenerTodasLasClases() {
-  return [...clasesIniciales, ...obtenerClasesGuardadas()];
+// 🔹 Normaliza los nombres para que coincidan con el frontend
+function normalizarClase(c) {
+  return {
+    img: c.img || c.imagen || "./img/default.png",
+    clase: c.clase || c.nombreClases || "Sin nombre",
+    edad: c.edad || c.edadAdmision || "No especificada",
+    maestro: c.maestro || "Por asignar",
+    horario: Array.isArray(c.horario) ? c.horario : [c.horario || "Horario no disponible"],
+    precio: c.precio || c.claseSuelta || "N/A",
+    "inscripcion anual": c["inscripcion anual"] || c.inscripcion || "N/A"
+  };
+}
+
+function obtenerClasesDesdeAPI() {
+  const requestOptions = {
+    method: "GET",
+    redirect: "follow"
+  };
+  return fetch("http://localhost:8080/api/clases/", requestOptions)
+    .then(response => response.json())
+    .then(data => data.map(normalizarClase)) // normalizar todas las clases de la API
+    .catch(error => {
+      console.error("Error al obtener clases desde API:", error);
+      return []; // Retornar arreglo vacío si falla
+    });
+}
+
+// Función para obtener todas las clases combinadas (iniciales + guardadas + API)
+async function obtenerTodasLasClases() {
+  const clasesAPI = await obtenerClasesDesdeAPI();
+  const clasesGuardadas = obtenerClasesGuardadas().map(normalizarClase);
+  return [...clasesIniciales, ...clasesGuardadas, ...clasesAPI];
 }
 
 // Función para renderizar tarjetas
@@ -163,7 +195,6 @@ function mostrarClases(lista) {
           : ""}
       </div>
     `;
-
     contenedor.appendChild(tarjeta);
 
     // Botón "Agregar"
@@ -172,31 +203,23 @@ function mostrarClases(lista) {
       window.location.href = `formulario.html?Name=${encodeURIComponent(item.clase)}`;
     });
 
-    // Botón "Eliminar" (solo para las nuevas en localStorage)
+    // Botón "Eliminar" (solo para las nuevas en localStorage o API)
     if (index >= clasesIniciales.length) {
       const botonEliminar = tarjeta.querySelector(".eliminar-btn");
       botonEliminar.addEventListener("click", () => {
-        eliminarClase(index - clasesIniciales.length);
+        eliminarClase(item.clase);
       });
     }
   });
 }
 
 // Eliminar una clase del localStorage
-function eliminarClase(index) {
-  const clasesGuardadas = obtenerClasesGuardadas();
-  clasesGuardadas.splice(index, 1); // Quitamos la clase en esa posición
+function eliminarClase(nombre) {
+  const clasesGuardadas = obtenerClasesGuardadas().filter(c => c.clase !== nombre);
   localStorage.setItem("clases", JSON.stringify(clasesGuardadas));
-  mostrarClases(obtenerTodasLasClases()); // Recargamos lista
+  // Recargamos lista
+  obtenerTodasLasClases().then(lista => mostrarClases(lista));
 }
 
 // Mostrar todas las clases al cargar
-mostrarClases(obtenerTodasLasClases());
-
-
-    
-  
-
- 
-
-  
+obtenerTodasLasClases().then(lista => mostrarClases(lista));
