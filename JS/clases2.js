@@ -168,7 +168,7 @@ async function obtenerTodasLasClases() {
 function mostrarClases(lista) {
   contenedor.innerHTML = ""; // Limpiamos antes de agregar
 
-  lista.forEach((item, index) => {
+  lista.forEach((item) => {
     const tarjeta = document.createElement("div");
     tarjeta.className = "col-12 col-sm-6 col-md-4 mb-4";
 
@@ -190,9 +190,6 @@ function mostrarClases(lista) {
       </div>
       <div style="text-align:center; margin-top: 10px;">
         <button type="button" class="btn btn-primary agregar-btn">Agregar</button>
-        ${index >= clasesIniciales.length ? 
-          `<button type="button" class="btn btn-danger eliminar-btn">Eliminar</button>` 
-          : ""}
       </div>
     `;
     contenedor.appendChild(tarjeta);
@@ -202,23 +199,7 @@ function mostrarClases(lista) {
     botonAgregar.addEventListener("click", () => {
       window.location.href = `formulario.html?Name=${encodeURIComponent(item.clase)}`;
     });
-
-    // Botón "Eliminar" (solo para las nuevas en localStorage o API)
-    if (index >= clasesIniciales.length) {
-      const botonEliminar = tarjeta.querySelector(".eliminar-btn");
-      botonEliminar.addEventListener("click", () => {
-        eliminarClase(item.clase);
-      });
-    }
   });
-}
-
-// Eliminar una clase del localStorage
-function eliminarClase(nombre) {
-  const clasesGuardadas = obtenerClasesGuardadas().filter(c => c.clase !== nombre);
-  localStorage.setItem("clases", JSON.stringify(clasesGuardadas));
-  // Recargamos lista
-  obtenerTodasLasClases().then(lista => mostrarClases(lista));
 }
 
 // Mostrar todas las clases al cargar
